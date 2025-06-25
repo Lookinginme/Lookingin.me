@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Notepad + Calendar</title>
+
+  <!-- ✅ Correct Style Links -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/calendar_notes.css') }}">
+
+  <style>
+    .controls {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin: 1rem 0;
+    }
+    .controls button,
+    .controls input[type="email"] {
+      padding: 0.6rem 1rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .controls button {
+      background-color: #004d4d;
+      color: white;
+    }
+    .controls button:hover {
+      background-color: #007373;
+    }
+    textarea.note-box {
+      width: 100%;
+      height: 300px;
+      font-size: 1.1rem;
+      padding: 1rem;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      resize: vertical;
+    }
+
+    .footer-navbar {
+      text-align: center;
+      margin-top: 2rem;
+      font-size: 1.1rem;
+      color: #004d4d;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- 🧭 Navigation Bar -->
+   <!-- 🔧 Navigation Bar -->
+    {% include 'navbar.html' %}
+
+<!-- 📝 Notepad Section -->
+<div class="notepad">
+
+  <!-- 📝 Note Header -->
+<div class="note-header">
+  <div id="note-name" contenteditable="true" class="note-title">Note to Self</div>
+
+  <div class="note-dropdown">
+    <button class="note-dropdown-btn">NoteSpark ⬇</button>
+    <div class="note-dropdown-content">
+      <button onclick="newNote()">🆕 New Note</button>
+      <button onclick="saveNote()">💾 Save Note</button>
+      <button onclick="saveNoteToCalendar()">📅 Save to Calendar</button>
+      <button onclick="deleteNote()">🗑️ Delete Note</button>
+      <button onclick="shareNote()">📤 Share Note</button>
+    </div>
+  </div>
+</div>
+
+    <!-- 📝 Note Textarea -->
+  <textarea id="noteText" class="note-box" placeholder="Write your thoughts..."></textarea>
+
+  <!-- 🛠️ Note Controls -->
+  <div class="controls">
+    <button onclick="saveNote()">💾 Save</button>
+    <button onclick="loadNote()">📂 Load</button>
+    <button onclick="speakNote()">🔊 Speak</button>
+    <button onclick="startDictation()">🎙️ Speak to Text</button>
+    <input type="email" id="userEmail" placeholder="Your Email" />
+    <button onclick="emailNote()">📨 Email</button>
+  </div>
+</div>
+
+    <!-- ⏰ Clock + Date -->
+    <div class="footer-navbar">
+      <div id="current-date"></div>
+      <div id="current-time"></div>
+    </div>
+  </div>
+
+  <!-- ✅ Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script src="{{ url_for('static', filename='js/notepad_calendar.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/americanclock.js') }}"></script>
+</body>
+</html>

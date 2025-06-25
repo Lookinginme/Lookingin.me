@@ -1,0 +1,28 @@
+<!-- templates/foodkourt.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Food Kourt</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <!--NAVBAR-->
+  {% include 'navbar.html' %}
+
+   <main>
+    <section>
+      <h2>🍏 Welcome to the Food Kourt</h2>
+      <p>Coming soon:</p>
+      <ul>
+        <li>🧠 Smart food checker</li>
+        <li>🍓 Recipes that support your sugar goals</li>
+        <li>👨‍🍳 Healthy treats & simple swaps</li>
+      </ul>
+      <p>Because good food can be fun *and* helpful — stay tuned!</p>
+    </section>
+  </main>
+
+</body>
+</html>

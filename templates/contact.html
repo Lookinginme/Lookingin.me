@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/contact.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/contact.css') }}">
+
+  </head>
+<body>
+    {% include 'navbar.html' %}
+  <section>
+    <div class="container">
+      <h2>Contact Us</h2>
+      <form id="contactForm">
+        <div class="form-row">
+          <div class="inputBox">
+            <input type="text" id="firstName" required />
+            <label for="firstName">First Name</label>
+            <button type="button" class="mic-button" data-target="firstName">🎤</button>
+          </div>
+
+          <div class="inputBox">
+            <input type="text" id="lastName" />
+            <label for="lastName">Last Name</label>
+            <button type="button" class="mic-button" data-target="lastName">🎤</button>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="inputBox">
+            <input type="email" id="email" required />
+            <label for="email">Email</label>
+            <button type="button" class="mic-button" data-target="email">🎤</button>
+          </div>
+
+          <div class="inputBox">
+            <input type="text" id="location" />
+            <label for="location">Country, City, State</label>
+            <button type="button" class="mic-button" data-target="location">🎤</button>
+          </div>
+        </div>
+
+        <div class="inputBox">
+          <textarea id="message" required></textarea>
+          <label for="message">Type Your Message Here...</label>
+          <button type="button" class="mic-button" data-target="message">🎤</button>
+        </div>
+
+        <input type="submit" value="Send" />
+      </form>
+
+      <div id="thankYouMessage">
+  <span class="thank-text">Thank you for reaching out!</span>
+  <span class="heart-envelope">💌</span>
+</div>
+
+    <!-- Static Dots Underneath the Form -->
+    <div class="listening-dots">. . .</div>
+  </section>
+
+<script src="{{ url_for('static', filename='js/contact.js') }}" defer></script>
+</body>
+</html>

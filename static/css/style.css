@@ -1,0 +1,144 @@
+/* ========== BASE LAYOUT ========== */
+html {
+  scroll-behavior: smooth;
+}
+
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 16px;
+  background: linear-gradient(to bottom right, #e0f7f9, #f0f9fb);
+  color: #333;
+  line-height: 1.6;
+}
+
+/* ========== NAVBAR ========== */
+.navbar 
+{
+  background-color: #004d4d;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05); /* Lightened shadow */
+}
+
+.navbar a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: color 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.navbar a:hover {
+  color: #ffd166;
+  transform: scale(1.05);
+}
+
+/* ========== HEADER ========== */
+.header {
+  background-color: #8bd3dd;
+  color: white;
+  text-align: center;
+  padding: 3rem 1rem;
+  font-size: 1.6rem;
+  border-bottom: 4px solid #5caab3;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  margin-bottom: 0.25em;
+  font-size: 2.2rem;
+}
+
+h2 {
+  font-size: 1.6rem;
+  margin-top: 1.5rem;
+}
+
+/* ========== HOMEPAGE-SAFE SECTION DEFAULT ========== */
+section {
+  padding: 2rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ========== ACCESSIBILITY ========== */
+.enlarged {
+  font-size: 1.2rem;
+}
+
+.enlarged h2 {
+  font-size: 1.8rem;
+}
+
+.enlarged button,
+.enlarged textarea {
+  font-size: 1.2rem;
+  padding: 0.8rem;
+}
+
+.enlarged .widget {
+  padding: 2rem;
+  width: 320px;
+}
+
+/* ========== TEXTAREA ========== */
+textarea.note-box {
+  width: 100%;
+  height: 300px;
+  font-size: 1.1rem;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  resize: vertical;
+  font-family: inherit;
+}
+/* ========== BREATHING STORY FLEX LAYOUT ========== */
+.breathing-story {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+  text-align: left;
+}
+
+.breathing-story h2 {
+  text-align: center;
+  width: 100%;
+}
+
+.breathing-text {
+  flex: 1;
+  min-width: 280px;
+  max-width: 500px;
+}
+
+.breathing-text p {
+  margin-bottom: 1rem;
+}
+
+.breathing-video {
+  flex: 1;
+  min-width: 280px;
+  max-width: 400px;
+}
+
+/* ========== FOOTER CENTERING ========== */
+.footer {
+  text-align: center;
+  padding: 1.5rem;
+  background-color: transparent;
+  font-size: 0.95rem;
+  color: #333;
+}
+

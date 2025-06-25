@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lookingin.me – Welcome</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+  {% include 'navbar.html' %}
+
+  <header class="header fade-in">
+    <h1>Welcome to Lookingin.me</h1>
+    <p>Helping you live fully with Type 1 Diabetes 💙</p>
+    <p class="welcome-note">Clock in, plan out, and pour your heart into your notes.</p>
+  </header>
+
+  <section class="breathing-story">
+    <div class="breathing-text">
+      <h2>🌬️ Breathe With Intention</h2>
+      <p>Breathing is one of the most powerful ways to calm your nervous system.</p>
+    </div>
+    <div class="breathing-video">
+      <video width="300" controls>
+        <source src="{{ url_for('static', filename='mp4/breathing-betty.mp4') }}" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>This is not medical advice. Please consult your healthcare provider. 💙</p>
+    <p>&copy; 2025 Lookingin.me – Gifted with love</p>
+  </footer>
+
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

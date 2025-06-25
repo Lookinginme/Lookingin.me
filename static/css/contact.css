@@ -1,0 +1,181 @@
+/* === Full-Page Layout and Background === */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #E9D7C0;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 5%;
+  position: relative;
+}
+
+section::before {
+  content: '';
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: linear-gradient(#ffab3b, #e91e63);
+  border-radius: 50%;
+  transform: translate(-420px, -180px);
+}
+
+section::after {
+  content: '';
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: linear-gradient(#2169f3, #83d8ff);
+  border-radius: 50%;
+  transform: translate(400px, 180px);
+}
+
+/* === Glass Container === */
+.container {
+  position: relative;
+  z-index: 1000;
+  width: 100%;
+  max-width: 1000px;
+  padding: 50px;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  backdrop-filter: blur(25px);
+  box-sizing: border-box;
+}
+
+.container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -40%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  pointer-events: none;
+  transform: skewX(-15deg);
+}
+
+/* === Form Content === */
+h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.inputBox {
+  position: relative;
+  flex: 1 1 48%;
+  margin-bottom: 1.2rem;
+  min-width: 220px;
+}
+
+.inputBox input,
+.inputBox textarea {
+  width: 100%;
+  padding: 0.7rem 2.2rem 0.7rem 0.8rem;
+  border: none;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  font-size: 1rem;
+  box-sizing: border-box;
+  resize: vertical;
+}
+
+textarea {
+  min-height: 100px;
+}
+
+.inputBox label {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  color: #000;
+}
+
+/* === Mic Button === */
+.mic-button {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: #ffb3c6;
+  padding: 0;
+  margin: 0;
+  height: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* === Submit Button === */
+input[type="submit"] {
+  width: 100%;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(to right, #ff9900, #ffd700);
+  color: #002222;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  margin-top: 1rem;
+}
+
+input[type="submit"]:hover {
+  transform: scale(1.03);
+}
+
+#thankYouMessage {
+  display: block; /* Show it! */
+  text-align: center;
+  margin-top: 2rem;
+  color: white;
+  font-size: 1.5rem;
+}
+
+.heart-envelope {
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  font-size: 3rem; /* controls only the emoji */
+  line-height: 60px;
+  vertical-align: middle;
+  margin-left: 0.5rem;
+}
+
+/* === Static Listening Dots Below the Glass Box === */
+.listening-dots {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2.5rem;
+  color: #ffb3c6;
+  opacity: 0.4;
+  z-index: 1;
+  pointer-events: none;
+}

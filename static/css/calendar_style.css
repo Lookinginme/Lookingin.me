@@ -1,0 +1,92 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #1c1c2e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.calendar-section {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #1c1c2e;
+}
+
+.calendar-section::before,
+.calendar-section::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.calendar-section::before {
+  width: 400px;
+  height: 400px;
+  background: linear-gradient(#ffc107, #e91e63);
+  top: -100px;
+  left: -150px;
+}
+
+.calendar-section::after {
+  width: 350px;
+  height: 350px;
+  background: linear-gradient(#2196f3, #31ff38);
+  bottom: -120px;
+  right: -100px;
+}
+
+.calendar-box {
+  position: relative;
+  z-index: 1;
+  backdrop-filter: blur(15px);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 1rem;
+  padding: 2rem;
+  color: white;
+  max-width: 500px;
+  margin: auto;
+}
+
+.month-display {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.days-of-week {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+  font-weight: bold;
+  padding: 0.5rem 0;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.5rem;
+  text-align: center;
+}
+
+.date {
+  padding: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.07);
+  border-radius: 0.5rem;
+  min-height: 50px;
+  font-size: 0.9rem;
+}
+
+.date a {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 0.8rem;
+  color: #ffccdd;
+  text-decoration: underline;
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nurse Betty Bot</title>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/nurse-betty.css') }}">
+</head>
+<body>
+  <!--NAVBAR-->
+  {% include 'navbar.html' %}
+
+  <h1>💬 Chat with Nurse Betty</h1>
+
+  <!-- Nurse Intro Section -->
+  <div class="nurse-intro">
+    <img src="{{ url_for('static', filename='icons/nursebettybot2.png') }}" alt="Nurse Betty" class="betty-img" />
+    <p class="subtitle">Your kind companion for Diabetes wellness 💖</p>
+    <audio id="bubbleSound" src="{{ url_for('static', filename='audio/pop.mp3') }}" preload="auto" class="styled-audio"></audio>
+  </div>
+
+  <!-- Chat Box -->
+  <div class="chat-wrapper">
+    <div id="chatHistory" class="chat-history">
+      <p class="bubble">I'm here when you're ready to ask something.</p>
+    </div>
+
+    <!-- Input Form -->
+    <form id="bettyForm" onsubmit="handleBettyForm(event)">
+      <input type="text" id="userInput" placeholder="Ask Nurse Betty..." required />
+      <button type="submit" class="ask-betty">Ask</button>
+      <button type="button" id="micButton" title="Voice Input">🎙️</button>
+    </form>
+  </div>
+
+  <!-- EmailJS Script -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script>
+    (function(){
+      emailjs.init("PCMZRmlHWoBESksvm"); // Replace with your EmailJS public key
+    })();
+  </script>
+
+  <!-- Main Script -->
+  <script src="{{ url_for('static', filename='js/nurse-betty.js') }}"></script>
+
+</body>
+</html>
