@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Nurse Betty AI Sugar Checker</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/ai_checker.css') }}">
+</head>
+<body>
+  <h1>🩺 AI Sugar Checker</h1>
+  <p>Upload a photo of your glucose monitor, and Nurse Betty will read it for you.</p>
+
+  <div class="container">
+    <form method="POST" enctype="multipart/form-data">
+      <input type="file" name="image" accept="image/*" required>
+      <br>
+      <button type="submit">Check Sugar</button>
+    </form>
+
+    {% if result %}
+      <div class="result">
+        <h2>Sugar Level Detected: {{ result }}</h2>
+        <p>{{ message }}</p>
+      </div>
+    {% endif %}
+  </div>
+
+  <!-- 🌸 Floating Nurse Betty Audio Bubble -->
+  <div class="betty-bubble" onclick="toggleBettyAudio()" title="Tap to hear Nurse Betty">
+    <img src="{{ url_for('static', filename='images/nursebettybot2.png') }}" alt="Nurse Betty">
+  </div>
+
+  <audio id="bettyAudio">
+    <source src="{{ url_for('static', filename='audio/NurseBetty_AI_Checker1.mp3') }}" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <script src="{{ url_for('static', filename='js/ai_checker.js') }}"></script>
+
+
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service_worker.js')
+      .then(() => console.log("✅ Service Worker registered"))
+      .catch(err => console.error("❌ SW registration failed", err));
+  }
+</script>
+ 
+</body>
+</html>

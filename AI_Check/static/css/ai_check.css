@@ -1,0 +1,91 @@
+body {
+  background: linear-gradient(to bottom right, #fce4ec, #f8bbd0); /* Soft pink */
+  font-family: 'Segoe UI', sans-serif;
+  color: #4a4a4a;
+  text-align: center;
+  padding: 2rem;
+  margin: 0;
+}
+
+h1 {
+  font-size: 2rem;
+  color: #e91e63; /* Nurse Betty pink */
+  margin-bottom: 1rem;
+}
+
+p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+button {
+  background-color: #e91e63;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #c2185b;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+.audio-box {
+  text-align: center;
+  margin: 1.5rem 0;
+}
+.audio-box button {
+  background-color: #d1f7f4;
+  border: none;
+  padding: 0.7rem 1.2rem;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  color: #333;
+  transition: background-color 0.3s ease;
+}
+.audio-box button:hover {
+  background-color: #b9eae5;
+}
+/* 🌸 Nurse Betty Floating Bubble */
+.betty-bubble {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 9999;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.betty-bubble:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+}
+
+.betty-bubble img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  pointer-events: none;
+}
+

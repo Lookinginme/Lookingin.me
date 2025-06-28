@@ -1,56 +1,27 @@
+/* 🌐 Universal Responsive Navbar */
 .navbar {
   background-color: #004d4d;
   padding: 1rem;
-  text-align: center;
-}
-
-.navbar .nav-list {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
   display: flex;
+  flex-wrap: wrap; /* Allows wrapping on small screens */
   justify-content: center;
-  flex-wrap: wrap;
   gap: 1rem;
-}
-
-.navbar .nav-list li {
-  display: inline;
-}
-
-.navbar .nav-list a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: bold;
-  padding: 0.5rem 1rem;
-  border-radius: 10px;
-  transition: background 0.3s ease;
-  background-color: #006666;
-}
-
-.navbar .nav-list a:hover {
-  background-color: #009999;
-}
-
-.navbar {
-  background-color: #004d4d;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: 15px;
-  color: white;
   font-size: 1.1rem;
+  font-weight: bold;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .navbar a {
   color: white;
   text-decoration: none;
-  padding: 0.5rem 1rem;
-  font-weight: bold;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  padding: 0.4rem 0.6rem;
+  border-radius: 4px;
 }
 
 .navbar a:hover {
-  background-color: #006666;
-  border-radius: 8px;
+  background-color: #007373;
+  color: #e91e63;
 }
-

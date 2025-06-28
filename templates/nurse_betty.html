@@ -7,6 +7,9 @@
 
   <!-- Styles -->
   <link rel="stylesheet" href="{{ url_for('static', filename='css/nurse-betty.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/navbar.css') }}">
+
 </head>
 <body>
   <!--NAVBAR-->
@@ -17,6 +20,10 @@
   <!-- Nurse Intro Section -->
   <div class="nurse-intro">
     <img src="{{ url_for('static', filename='icons/nursebettybot2.png') }}" alt="Nurse Betty" class="betty-img" />
+    <p style="text-align: center; font-size: 0.95rem; color: #555;">
+   Powered by AI to support your journey with compassion, insight, and care.
+</p>
+
     <p class="subtitle">Your kind companion for Diabetes wellness 💖</p>
     <audio id="bubbleSound" src="{{ url_for('static', filename='audio/pop.mp3') }}" preload="auto" class="styled-audio"></audio>
   </div>

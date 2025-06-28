@@ -1,0 +1,21 @@
+{
+  "name": "Nurse Betty - Sugar Checker",
+  "short_name": "SugarChecker",
+  "start_url": "/ai_checker",  // ✅ Use Flask route, not raw HTML file
+  "display": "standalone",
+  "background_color": "#fce4ec",
+  "theme_color": "#006064",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/static/icons/betty-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/static/icons/betty-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
